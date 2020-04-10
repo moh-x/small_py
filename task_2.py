@@ -28,15 +28,16 @@ while email_verify(email)==False:
 
 password = first_name[:2]+last_name[:2]+randomString(5)
 print("Your Password: "+password)
-ask = input("do you like the password? please reply 'yes' or 'no'.")
+ask = input("Do you like the password? please reply 'yes' or 'no'.\n")
 
 if ask.lower() != 'yes':
 	password = input("Please input your preferred password (not less than 7 characters:\n")
 	while len(password) < 7:
-		password = input("Improper password length, please input your password again (not less than 7 characters)")
-else:
-	user = {'fn':first_name, 'ln':last_name, 'em':email, 'pw':password,}
-	print("Your information:\n\tFirst Name: "+user.fn+"\n\tLast Name: "+user.ln+"\n\tEmail: "+user.em+"\n\tPassword: "+user.pw)
-	users.append(user)
+		password = input("Improper password length, please input your password again (not less than 7 characters)\n")
+	
+user = {'fn':first_name, 'ln':last_name, 'em':email, 'pw':password,}
+print("Your information:\n\tFirst Name: "+user['fn']+"\n\tLast Name: "+user['ln']+"\n\tEmail: "+user['em']+"\n\tPassword: "+user['pw'])
+users.append(user)
 
+print(users)
 
